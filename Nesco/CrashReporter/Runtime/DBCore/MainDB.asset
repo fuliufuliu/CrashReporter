@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb81f8613b14f11499031cce31fb9878, type: 3}
-  m_Name: TestDB
+  m_Script: {fileID: 11500000, guid: 81f50ed393fefb2499fa2526960411b1, type: 3}
+  m_Name: MainDB
   m_EditorClassIdentifier: 
   _dbConfig:
-    DBName: TestDB
-    AuthorizationHeaderName: Authorization
-    AuthorizationHeaderValue: ' Bearer AXbYACQgODUxOGFmMzAtYWJhYS00NjI3LTg2NjUtZGZhYzhiYmY3MjQzZDE3MmQwYTdiYjBhNDU5M2EzMzc0ZDY4YWU1ODYxNTU='
+    DBName: 
+    AuthorizationHeaderName: 
+    AuthorizationHeaderValue: 
     RestURL: 
     RestToken: 

@@ -88,7 +88,7 @@ namespace Nesco.CrashReporter
         {
             var typeText = type.ToString();
 
-            using (UnityWebRequest reportSetRequest = UnityWebRequest.Post(_dBConfig.RestURL + $"/hset/{typeText}/{reportId}/", $"{reportText}"))
+            using (UnityWebRequest reportSetRequest = UnityWebRequest.PostWwwForm(_dBConfig.RestURL + $"/hset/{typeText}/{reportId}/", $"{reportText}"))
             {
                 reportSetRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(reportText));
                 reportSetRequest.SetRequestHeader(_dBConfig.AuthorizationHeaderName, _dBConfig.AuthorizationHeaderValue);
@@ -107,7 +107,7 @@ namespace Nesco.CrashReporter
         IEnumerator SendCustomReportToServerRoutine(string tableName, string reportId, string reportText)
         {
 
-            using (UnityWebRequest reportSetRequest = UnityWebRequest.Post(_dBConfig.RestURL + $"/hset/{tableName}/{reportId}/", $"{reportText}"))
+            using (UnityWebRequest reportSetRequest = UnityWebRequest.PostWwwForm(_dBConfig.RestURL + $"/hset/{tableName}/{reportId}/", $"{reportText}"))
             {
                 reportSetRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(reportText));
                 reportSetRequest.SetRequestHeader(_dBConfig.AuthorizationHeaderName, _dBConfig.AuthorizationHeaderValue);
@@ -124,7 +124,7 @@ namespace Nesco.CrashReporter
         IEnumerator SendCustomReportToServerRoutine(string tableName, string reportText)
         {
             string reportId = GenerateReportId();
-            using (UnityWebRequest reportSetRequest = UnityWebRequest.Post(_dBConfig.RestURL + $"/hset/{tableName}/{reportId}/", $"{reportText}"))
+            using (UnityWebRequest reportSetRequest = UnityWebRequest.PostWwwForm(_dBConfig.RestURL + $"/hset/{tableName}/{reportId}/", $"{reportText}"))
             {
                 reportSetRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(reportText));
                 reportSetRequest.SetRequestHeader(_dBConfig.AuthorizationHeaderName, _dBConfig.AuthorizationHeaderValue);
@@ -142,7 +142,7 @@ namespace Nesco.CrashReporter
         {
             string reportId = GenerateReportId();
             string reportKey = "CustomReport";
-            using (UnityWebRequest reportSetRequest = UnityWebRequest.Post(_dBConfig.RestURL + $"/hset/{reportKey}/{reportId}/", $"{reportText}"))
+            using (UnityWebRequest reportSetRequest = UnityWebRequest.PostWwwForm(_dBConfig.RestURL + $"/hset/{reportKey}/{reportId}/", $"{reportText}"))
             {
                 reportSetRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(reportText));
                 reportSetRequest.SetRequestHeader(_dBConfig.AuthorizationHeaderName, _dBConfig.AuthorizationHeaderValue);
@@ -159,7 +159,7 @@ namespace Nesco.CrashReporter
         IEnumerator SendCustomReportToServerRoutine(string tableName, string reportId, string reportText, Action<UnityWebRequest.Result> callback)
         {
 
-            using (UnityWebRequest reportSetRequest = UnityWebRequest.Post(_dBConfig.RestURL + $"/hset/{tableName}/{reportId}/", $"{reportText}"))
+            using (UnityWebRequest reportSetRequest = UnityWebRequest.PostWwwForm(_dBConfig.RestURL + $"/hset/{tableName}/{reportId}/", $"{reportText}"))
             {
                 reportSetRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(reportText));
                 reportSetRequest.SetRequestHeader(_dBConfig.AuthorizationHeaderName, _dBConfig.AuthorizationHeaderValue);
@@ -173,7 +173,7 @@ namespace Nesco.CrashReporter
         IEnumerator SendCustomReportToServerRoutine(string tableName, string reportText, Action<UnityWebRequest.Result> callback)
         {
             string reportId = GenerateReportId();
-            using (UnityWebRequest reportSetRequest = UnityWebRequest.Post(_dBConfig.RestURL + $"/hset/{tableName}/{reportId}/", $"{reportText}"))
+            using (UnityWebRequest reportSetRequest = UnityWebRequest.PostWwwForm(_dBConfig.RestURL + $"/hset/{tableName}/{reportId}/", $"{reportText}"))
             {
                 reportSetRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(reportText));
                 reportSetRequest.SetRequestHeader(_dBConfig.AuthorizationHeaderName, _dBConfig.AuthorizationHeaderValue);
@@ -188,7 +188,7 @@ namespace Nesco.CrashReporter
         {
             string reportId = GenerateReportId();
             string reportKey = "CustomReport";
-            using (UnityWebRequest reportSetRequest = UnityWebRequest.Post(_dBConfig.RestURL + $"/hset/{reportKey}/{reportId}/", $"{reportText}"))
+            using (UnityWebRequest reportSetRequest = UnityWebRequest.PostWwwForm(_dBConfig.RestURL + $"/hset/{reportKey}/{reportId}/", $"{reportText}"))
             {
                 reportSetRequest.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(reportText));
                 reportSetRequest.SetRequestHeader(_dBConfig.AuthorizationHeaderName, _dBConfig.AuthorizationHeaderValue);
