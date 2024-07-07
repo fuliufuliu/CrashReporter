@@ -80,8 +80,8 @@ namespace Nesco.CrashReporter
 
             string reportText = JsonConvert.SerializeObject(crashReport);
             string reportID = GenerateReportId();
-
-            StartCoroutine(SendCrashReportToServer(reportID, crashReport.LogType, reportText));
+            if (this)
+                StartCoroutine(SendCrashReportToServer(reportID, crashReport.LogType, reportText));
         }
 
         IEnumerator SendCrashReportToServer(string reportId, LogType type, string reportText)
